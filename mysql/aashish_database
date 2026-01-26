@@ -1,0 +1,135 @@
+-- aashish Database Normalization Lab 
+use demo;
+
+-- PART A : Unnormalization table 
+ CREATE TABLE data (
+    -> StudentID VARCHAR(50) PRIMARY KEY,
+    -> Name VARCHAR(50),
+    -> Email VARCHAR (50),
+    -> Majors VARCHAR(50),
+    -> Majorshead VARCHAR(50),
+    -> CourseID VARCHAR(50),
+    -> CourseTitle VARCHAR(50),
+    -> Credits int,
+    -> Grade VARCHAR(50),
+    -> Building VARCHAR(50),
+    -> Room VARCHAR
+    -> );
+
+ INSERT INTO data1
+ ('S101','Alice','alice@uni.edu','CS','Dr.smith','CS301','Algorithms',4,'C','Science',205);
+ ('S102','Bob','Bob@uni.edu','CS','Dr.smith','CS301','Algorithms',4,'C','Science',205);
+  ('S103','carol','carol@uni.edu','physics','Dr.lee','CS301','Linear Algebra',3,'A','Math wing',101);
+  
+--At last it already in 1normal form 
+
+--PART B : second normal form (2NF)
+
+--TABLE Student
+CREATE TABLE Students (
+StudentID VARCHAR(10) PRIMARY KEY,
+Name VARCHAR(100) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Major VARCHAR(50),
+FOREIGN KEY (Major) REFERENCES Majors(
+Major)
+);
+
+INSERT INTO Students VALUES
+(’S101’, ’Alice’, ’alice@uni.edu’, ’CS’),
+(’S102’, ’Bob’, ’bob@uni.edu’, ’CS’),
+(’S103’, ’Carol’, ’carol@uni.edu’, ’Physics’);
+
+--TABLE Courses
+CREATE TABLE Courses (
+CourseID VARCHAR(10) PRIMARY KEY,
+CourseTitle VARCHAR(100) NOT NULL,
+Credits INT NOT NULL,
+Building VARCHAR(50),
+Room VARCHAR(10)
+);
+
+INSERT INTO Courses VALUES
+(’CS301’, ’Algorithms’, 4, ’Science’, ’205’),
+(’MATH201’, ’Linear Algebra’, 3, ’Math Wing’,
+’101’),
+(’PHYS101’, ’Mechanics’, 4, ’Science’, ’301’);
+
+--TABLES Enrollments
+CREATE TABLE Enrollments (
+StudentID VARCHAR(10),
+CourseID VARCHAR(10),
+Grade CHAR(1),
+PRIMARY KEY (StudentID, CourseID),
+FOREIGN KEY (StudentID) REFERENCES
+Students(StudentID),
+FOREIGN KEY (CourseID) REFERENCES Courses(
+CourseID)
+);
+
+INSERT INTO Enrollments VALUES
+(’S101’, ’CS301’, ’A’),
+(’S101’, ’MATH201’, ’B’),
+(’S102’, ’CS301’, ’C’),
+(’S103’, ’PHYS101’, ’A’);
+
+--PART C : Third normal form (3NF)
+
+--TABLE Majors
+CREATE TABLE Majors (
+Major VARCHAR(50) PRIMARY KEY,
+Advisor VARCHAR(100) NOT NULL
+);
+
+INSERT INTO Majors VALUES
+(’CS’, ’Dr. Smith’),
+(’Physics’, ’Dr. Lee’);
+
+--TABLE Student
+CREATE TABLE Students (
+StudentID VARCHAR(10) PRIMARY KEY,
+Name VARCHAR(100) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Major VARCHAR(50),
+FOREIGN KEY (Major) REFERENCES Majors(
+Major)
+);
+
+INSERT INTO Students VALUES
+(’S101’, ’Alice’, ’alice@uni.edu’, ’CS’),
+(’S102’, ’Bob’, ’bob@uni.edu’, ’CS’),
+(’S103’, ’Carol’, ’carol@uni.edu’, ’Physics’);
+
+--TABLE Courses
+CREATE TABLE Courses (
+CourseID VARCHAR(10) PRIMARY KEY,
+CourseTitle VARCHAR(100) NOT NULL,
+Credits INT NOT NULL,
+Building VARCHAR(50),
+Room VARCHAR(10)
+);
+
+INSERT INTO Courses VALUES
+(’CS301’, ’Algorithms’, 4, ’Science’, ’205’),
+(’MATH201’, ’Linear Algebra’, 3, ’Math Wing’,
+’101’),
+(’PHYS101’, ’Mechanics’, 4, ’Science’, ’301’);
+
+--TABLE Enrollment 
+CREATE TABLE Enrollments (
+StudentID VARCHAR(10),
+CourseID VARCHAR(10),
+Grade CHAR(1),
+PRIMARY KEY (StudentID, CourseID),
+FOREIGN KEY (StudentID) REFERENCES
+Students(StudentID),
+FOREIGN KEY (CourseID) REFERENCES Courses(
+CourseID)
+);
+
+INSERT INTO Enrollments VALUES
+(’S101’, ’CS301’, ’A’),
+(’S101’, ’MATH201’, ’B’),
+(’S102’, ’CS301’, ’C’),
+(’S103’, ’PHYS101’, ’A’);
+
