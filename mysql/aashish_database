@@ -133,3 +133,8 @@ INSERT INTO Enrollments VALUES
 (’S102’, ’CS301’, ’C’),
 (’S103’, ’PHYS101’, ’A’);
 
+ CREATE TABLE aalu (
+    -> Major VARCHAR(50) PRIMARY KEY,
+    -> Advisor VARCHAR(100) NOT NULL
+    -> );
+
