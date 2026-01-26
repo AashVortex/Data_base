@@ -3,18 +3,18 @@ use demo;
 
 -- PART A : Unnormalization table 
  CREATE TABLE data (
-    -> StudentID VARCHAR(50) PRIMARY KEY,
-    -> Name VARCHAR(50),
-    -> Email VARCHAR (50),
-    -> Majors VARCHAR(50),
-    -> Majorshead VARCHAR(50),
-    -> CourseID VARCHAR(50),
-    -> CourseTitle VARCHAR(50),
-    -> Credits int,
-    -> Grade VARCHAR(50),
-    -> Building VARCHAR(50),
-    -> Room VARCHAR
-    -> );
+    StudentID VARCHAR(50) PRIMARY KEY,
+     Name VARCHAR(50),
+    Email VARCHAR (50),
+     Majors VARCHAR(50),
+     Majorshead VARCHAR(50),
+     CourseID VARCHAR(50),
+     CourseTitle VARCHAR(50),
+     Credits int,
+     Grade VARCHAR(50),
+     Building VARCHAR(50),
+     Room VARCHAR
+     );
 
  INSERT INTO data1
  ('S101','Alice','alice@uni.edu','CS','Dr.smith','CS301','Algorithms',4,'C','Science',205);
@@ -36,9 +36,9 @@ Major)
 );
 
 INSERT INTO Students VALUES
-(’S101’, ’Alice’, ’alice@uni.edu’, ’CS’),
-(’S102’, ’Bob’, ’bob@uni.edu’, ’CS’),
-(’S103’, ’Carol’, ’carol@uni.edu’, ’Physics’);
+('S101', 'Alice', 'alice@uni.edu', 'CS'),
+('S102', 'Bob', 'bob@uni.edu', 'CS'),
+('S103', 'Carol', 'carol@uni.edu', 'Physics');
 
 --TABLE Courses
 CREATE TABLE Courses (
@@ -50,10 +50,10 @@ Room VARCHAR(10)
 );
 
 INSERT INTO Courses VALUES
-(’CS301’, ’Algorithms’, 4, ’Science’, ’205’),
-(’MATH201’, ’Linear Algebra’, 3, ’Math Wing’,
-’101’),
-(’PHYS101’, ’Mechanics’, 4, ’Science’, ’301’);
+('CS301', 'Algorithms', 4, 'Science', '205'),
+('MATH201', 'Linear Algebra', 3, 'Math Wing',
+'101'),
+('PHYS101', 'Mechanics', 4, 'Science', '301');
 
 --TABLES Enrollments
 CREATE TABLE Enrollments (
@@ -68,10 +68,10 @@ CourseID)
 );
 
 INSERT INTO Enrollments VALUES
-(’S101’, ’CS301’, ’A’),
-(’S101’, ’MATH201’, ’B’),
-(’S102’, ’CS301’, ’C’),
-(’S103’, ’PHYS101’, ’A’);
+('S101', 'CS301', 'A'),
+('S101', 'MATH201', 'B'),
+('S102', 'CS301', 'C'),
+('S103', 'PHYS101', 'A');
 
 --PART C : Third normal form (3NF)
 
@@ -82,8 +82,8 @@ Advisor VARCHAR(100) NOT NULL
 );
 
 INSERT INTO Majors VALUES
-(’CS’, ’Dr. Smith’),
-(’Physics’, ’Dr. Lee’);
+('CS', 'Dr. Smith'),
+('Physics', 'Dr. Lee');
 
 --TABLE Student
 CREATE TABLE Students (
@@ -96,9 +96,9 @@ Major)
 );
 
 INSERT INTO Students VALUES
-(’S101’, ’Alice’, ’alice@uni.edu’, ’CS’),
-(’S102’, ’Bob’, ’bob@uni.edu’, ’CS’),
-(’S103’, ’Carol’, ’carol@uni.edu’, ’Physics’);
+('S101', 'Alice', 'alice@uni.edu', 'CS'),
+('S102', 'Bob', 'bob@uni.edu', 'CS'),
+('S103', 'Carol', 'carol@uni.edu', 'Physics');
 
 --TABLE Courses
 CREATE TABLE Courses (
@@ -110,16 +110,16 @@ Room VARCHAR(10)
 );
 
 INSERT INTO Courses VALUES
-(’CS301’, ’Algorithms’, 4, ’Science’, ’205’),
-(’MATH201’, ’Linear Algebra’, 3, ’Math Wing’,
-’101’),
-(’PHYS101’, ’Mechanics’, 4, ’Science’, ’301’);
+('CS301', 'Algorithms', 4, 'Science', '205'),
+('MATH201', 'Linear Algebra', 3, 'Math Wing',
+'101'),
+('PHYS101', 'Mechanics', 4, 'Science', '301');
 
 --TABLE Enrollment 
 CREATE TABLE Enrollments (
 StudentID VARCHAR(10),
 CourseID VARCHAR(10),
-Grade CHAR(1),
+Grade VARCHAR(1),
 PRIMARY KEY (StudentID, CourseID),
 FOREIGN KEY (StudentID) REFERENCES
 Students(StudentID),
@@ -128,13 +128,10 @@ CourseID)
 );
 
 INSERT INTO Enrollments VALUES
-(’S101’, ’CS301’, ’A’),
-(’S101’, ’MATH201’, ’B’),
-(’S102’, ’CS301’, ’C’),
-(’S103’, ’PHYS101’, ’A’);
+('S101', 'CS301', 'A'),
+('S101', 'MATH201', 'B'),
+('S102', 'CS301', 'C'),
+('S103', 'PHYS101', 'A');
 
- CREATE TABLE aalu (
-    -> Major VARCHAR(50) PRIMARY KEY,
-    -> Advisor VARCHAR(100) NOT NULL
-    -> );
+
 
