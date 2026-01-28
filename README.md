@@ -6,9 +6,12 @@ Eliminate data redundancy – avoid storing the same data in multiple places.
 Ensure data consistency – changes in one place automatically reflect everywhere.
 Improve data integrity – reduce errors and anomalies when inserting, updating, or deleting data.
 
-Types of normalization
+Database Schema
 
-1NF,
-2NF,
-3NF,
+Unnormalized Form (Initial)
+
+'''
+data (StudentID, Name, Email, Majors, Majorhead, CourseID, CourseTittle, Credits, Grade, Building, room)
+
+
 
