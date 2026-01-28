@@ -10,9 +10,9 @@ Database Schema
 
 Unnormalized Form (Initial)
 
-'''
+'''bash
 data (StudentID, Name, Email, Majors, Majorhead, CourseID, CourseTittle, Credits, Grade, Building, room)
 
-'''
+'''bash
 
 
