@@ -18,16 +18,19 @@ data (StudentID, Name, Email, Majors, Majorhead, CourseID, CourseTittle, Credits
 1NF(first normal form )
 it has already in first normal you don't have to do in 1NF
 
-2NF(second normal form )
-1.Students(StudentID, Name, Email, Major)
-2.Courses(CourseID, CourseTittle, Credits, Building, Room )
-3.Enrollments(StudentsID, CourseID, Grade)
+## 2NF (Second Normal Form)
 
-3NF(third normal form )
-1.Students(StudentID, Name, Email, Major)
-2.Courses(CourseID, CourseTittle, Credits, Building, Room )
-3.Enrollments(StudentsID, CourseID, Grade)
-4.Majors(Major,Advisor)
+1. Students(StudentID, Name, Email, Major)
+2. Courses(CourseID, CourseTitle, Credits, Building, Room)
+3. Enrollments(StudentID, CourseID, Grade)
+
+## 3NF (Third Normal Form)
+
+1. Students(StudentID, Name, Email, Major)
+2. Courses(CourseID, CourseTitle, Credits, Building, Room)
+3. Enrollments(StudentID, CourseID, Grade)
+4. Majors(Major, Advisor)
+
 
 
 
