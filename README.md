@@ -8,7 +8,7 @@ Improve data integrity – reduce errors and anomalies when inserting, updating,
 
 Types of normalization
 
-1NF
-2NF
-3NF
+1NF,
+2NF,
+3NF,
 
