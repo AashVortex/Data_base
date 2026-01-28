@@ -9,10 +9,9 @@ Improve data integrity – reduce errors and anomalies when inserting, updating,
 Database Schema
 
 Unnormalized Form (Initial)
-
-'''bash
+"""
 data (StudentID, Name, Email, Majors, Majorhead, CourseID, CourseTittle, Credits, Grade, Building, room)
 
-'''bash
+"""
 
 
