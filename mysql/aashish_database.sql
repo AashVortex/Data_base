@@ -133,5 +133,26 @@ INSERT INTO Enrollments VALUES
 ('S102', 'CS301', 'C'),
 ('S103', 'PHYS101', 'A');
 
+--PART D : VERIFICATION QUERY (RECONSTRUCT ORIGINAL
+TABLE)
+ SELECT
+     s.StudentID,
+     s.Name,
+     s.Email,
+     s.Major,
+     m.Advisor,
+     c.CourseID,
+     c.CourseTitle,
+     c.Credits,
+     e.Grade,
+     c.Building,
+     c.Room
+     FROM Students s
+     JOIN Majors m ON s.Major = m.Major
+     JOIN Enrollments e ON s.StudentID = e.
+     StudentID
+     JOIN Courses c ON e.CourseID = c.CourseID;
+
+
 
 
