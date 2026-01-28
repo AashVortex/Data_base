@@ -15,22 +15,19 @@ data (StudentID, Name, Email, Majors, Majorhead, CourseID, CourseTittle, Credits
 
 ```
 
+1NF(first normal form )
+it has already in first normal you don't have to do in 1NF
 
+2NF(second normal form )
+Students(StudentID, Name, Email, Major)
+Courses(CourseID, CourseTittle, Credits, Building, Room )
+Enrollments(StudentsID, CourseID, Grade)
 
-```sql
-CREATE TABLE data (
-    StudentID INT PRIMARY KEY,
-    Name VARCHAR(100),
-    Email VARCHAR(100),
-    Majors VARCHAR(50),
-    Majorhead VARCHAR(100),
-    CourseID VARCHAR(20),
-    CourseTittle VARCHAR(100),
-    Credits INT,
-    Grade CHAR(2),
-    Building VARCHAR(50),
-    Room VARCHAR(10)
-);
-```
+3NF(third normal form )
+Students(StudentID, Name, Email, Major)
+Courses(CourseID, CourseTittle, Credits, Building, Room )
+Enrollments(StudentsID, CourseID, Grade)
+Majors(Major,Advisor)
+
 
 
