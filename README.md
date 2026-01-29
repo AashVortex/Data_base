@@ -268,6 +268,35 @@ Execeped output
 
 ```
 
+```
+SELECT * FROM Majors;
+```
+
+Execeped output 
+```
++---------+-----------+
+| Major   | Advisor   |
++---------+-----------+
+| CS      | Dr. smith |
+| physics | Dr. lee   |
++---------+-----------+
+
+```
+
+```
+SELECT * FROM Courses;
+```
+
+Execeped output 
+```
++----------+----------------+---------+-----------+------+
+| CourseID | CourseTitle    | Credits | Building  | Room |
++----------+----------------+---------+-----------+------+
+| CS301    | Algorithms     |       4 | Science   | 205  |
+| MATH201  | Linear Algebra |       3 | Math Wing | 101  |
+| PHYS101  | Mechanics      |       4 | Science   | 301  |
++----------+----------------+---------+-----------+------+
+```
 
 
 
