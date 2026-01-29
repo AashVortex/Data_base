@@ -136,7 +136,99 @@ INSERT INTO Enrollments VALUES
 ('S103', 'PHYS101', 'A');
 
 ```
- 
+
+## 3NF
+
+Table Majors
+
+```
+CREATE TABLE Majors (
+Major VARCHAR(50) PRIMARY KEY,
+Advisor VARCHAR(100) NOT NULL
+);
+
+```
+Inserting values 
+
+```
+INSERT INTO Majors VALUES
+('CS', 'Dr. Smith'),
+('Physics', 'Dr. Lee');
+
+```
+
+Table Student 
+
+```
+CREATE TABLE Students (
+StudentID VARCHAR(10) PRIMARY KEY,
+Name VARCHAR(100) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Major VARCHAR(50),
+FOREIGN KEY (Major) REFERENCES Majors(
+Major)
+);
+
+```
+Inserting valuses
+
+```
+INSERT INTO Students VALUES
+('S101', 'Alice', 'alice@uni.edu', 'CS'),
+('S102', 'Bob', 'bob@uni.edu', 'CS'),
+('S103', 'Carol', 'carol@uni.edu', 'Physics');
+
+```
+
+Table courses
+
+```
+CREATE TABLE Courses (
+CourseID VARCHAR(10) PRIMARY KEY,
+CourseTitle VARCHAR(100) NOT NULL,
+Credits INT NOT NULL,
+Building VARCHAR(50),
+Room VARCHAR(10)
+);
+
+```
+Inserting values 
+
+```
+INSERT INTO Courses VALUES
+('CS301', 'Algorithms', 4, 'Science', '205'),
+('MATH201', 'Linear Algebra', 3, 'Math Wing',
+'101'),
+('PHYS101', 'Mechanics', 4, 'Science', '301');
+
+```
+Table Enrollments 
+
+```
+CREATE TABLE Enrollments (
+StudentID VARCHAR(10),
+CourseID VARCHAR(10),
+Grade CHAR(1),
+PRIMARY KEY (StudentID, CourseID),
+FOREIGN KEY (StudentID) REFERENCES
+Students(StudentID),
+FOREIGN KEY (CourseID) REFERENCES Courses(
+CourseID)
+);
+
+```
+Inserting values 
+
+```
+INSERT INTO Enrollments VALUES
+('S101', 'CS301', 'A'),
+('S101', 'MATH201', 'B'),
+('S102', 'CS301', 'C'),
+('S103', 'PHYS101', 'A');
+
+```
+now it has normalized 
+
 
 
 
