@@ -56,6 +56,24 @@ Step 1: Create Unnormalized Table
  ('S101','Alice','alice@uni.edu','CS','Dr.smith','CS301','Algorithms',4,'C','Science',205);
  ('S102','Bob','Bob@uni.edu','CS','Dr.smith','CS301','Algorithms',4,'C','Science',205);
   ('S103','carol','carol@uni.edu','physics','Dr.lee','CS301','Linear Algebra',3,'A','Math wing',101);
+
+```
+
+it has already in 1NF you don't have to do in 1NF (first normal form )
+
+Step 2: Apply Normalization
+## 2NF 
+
+```
+CREATE TABLE Students (
+StudentID VARCHAR(10) PRIMARY KEY,
+Name VARCHAR(100) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Major VARCHAR(50),
+FOREIGN KEY (Major) REFERENCES Majors(
+Major)
+);
+
 ```
 
 
