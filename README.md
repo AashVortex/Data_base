@@ -298,7 +298,42 @@ Execeped output
 +----------+----------------+---------+-----------+------+
 ```
 
+AT LAST VERIFICATION QUERY (RECONSTRUCT ORIGINAL
+TABLE) combine all the query in one table 
 
+```
+SELECT
+     s.StudentID,
+     s.Name,
+     s.Email,
+     s.Major,
+     m.Advisor,
+     c.CourseID,
+     c.CourseTitle,
+     c.Credits,
+     e.Grade,
+     c.Building,
+     c.Room
+     FROM Students s
+     JOIN Majors m ON s.Major = m.Major
+     JOIN Enrollments e ON s.StudentID = e.
+     StudentID
+     JOIN Courses c ON e.CourseID = c.CourseID;
+
+```
+RESULT
+
+```
++-----------+-------+---------------+---------+-----------+----------+----------------+---------+-------+-----------+------+
+| StudentID | Name  | Email         | Major   | Advisor   | CourseID | CourseTitle    | Credits | Grade | Building  | Room |
++-----------+-------+---------------+---------+-----------+----------+----------------+---------+-------+-----------+------+
+| S101      | Alice | alice@uni.edu | CS      | Dr. smith | CS301    | Algorithms     |       4 | A     | Science   | 205  |
+| S101      | Alice | alice@uni.edu | CS      | Dr. smith | MATH201  | Linear Algebra |       3 | B     | Math Wing | 101  |
+| S102      | Bob   | bob@uni.edu   | CS      | Dr. smith | CS301    | Algorithms     |       4 | C     | Science   | 205  |
+| S103      | Carol | carol@uni.edu | Physics | Dr. lee   | PHYS101  | Mechanics      |       4 | A     | Science   | 301  |
++-----------+-------+---------------+---------+-----------+----------+----------------+---------+-------+-----------+------+
+
+```
 
 
 
