@@ -229,6 +229,48 @@ INSERT INTO Enrollments VALUES
 ```
 now it has normalized 
 
+VERIFIACTION & TESTING 
+
+TEST CASE:1
+
+```
+SELECT * FROM Students;
+
+```
+
+Execeped output 
+
+```
++-----------+-------+---------------+---------+
+| StudentID | Name  | Email         | Major   |
++-----------+-------+---------------+---------+
+| S101      | Alice | alice@uni.edu | CS      |
+| S102      | Bob   | bob@uni.edu   | CS      |
+| S103      | Carol | carol@uni.edu | Physics |
++-----------+-------+---------------+---------+
+
+```
+
+```
+SELECT * FROM Enrollments;
+
+```
+Execeped output 
+```
++-----------+----------+-------+
+| StudentID | CourseID | Grade |
++-----------+----------+-------+
+| S101      | CS301    | A     |
+| S101      | MATH201  | B     |
+| S102      | CS301    | C     |
+| S103      | PHYS101  | A     |
++-----------+----------+-------+
+
+```
+
+
+
+
 
 
 
